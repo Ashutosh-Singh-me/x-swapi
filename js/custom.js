@@ -5,14 +5,41 @@ document.getElementById('species').addEventListener('click', getInfo.bind(null,'
 document.getElementById('vehicles').addEventListener('click', getInfo.bind(null,'vehicles'));
 document.getElementById('starships').addEventListener('click', getInfo.bind(null, 'starships'));
 
+var previous_link =  document.getElementById('previous');
+var next_link = document.getElementById('next');
+var next = '', prev = '', target_global = '';
+
+previous_link.addEventListener('click', getInfoLink.bind(null, 'previous'));
+next_link.addEventListener('click', getInfoLink.bind(null, 'next'));
+
 function getInfo(target) {
-    const API = "http://swapi.dev/api/"+target+"/";
+    target_global = target;
+    let API = "http://swapi.dev/api/"+target+"/";
+    
     fetch(API)
     .then( function(rsp) { 
         return rsp.json()
     })
     .then( function(data) {
         setData(data, target)
+        movement(data.next, data.previous)
+    })
+}
+
+function getInfoLink(link_name) {
+
+    if (link_name === 'previous')
+        API = prev;
+    if (link_name === 'next')
+        API = next;
+
+    fetch(API)
+    .then( function(rsp) { 
+        return rsp.json()
+    })
+    .then( function(data) {
+        setData(data, target_global)
+        movement(data.next, data.previous)
     })
 }
 
@@ -190,6 +217,7 @@ function setData(data, c) {
         });
     }
 
+
     mainElement.innerHTML = output;
 }
 
@@ -201,4 +229,20 @@ function getGender(gender) {
         return '<span> &#x2640</span>';//' &#x2640';
     else
     return '<span style="font-weight: 400"> &#x3f</span>'//' &#x3f';
+}
+
+function movement(temp_next, temp_previous) {
+    
+    next = temp_next;
+    prev = temp_previous;   
+
+    if (!temp_next)
+        next_link.classList.add('disabled');
+    else
+        next_link.classList.remove('disabled');
+
+    if (!temp_previous)
+        previous_link.classList.add('disabled');
+    else
+        previous_link.classList.remove('disabled');
 }
