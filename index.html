@@ -1,63 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Google Font -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Google Font -->
 
+  <!-- w3 stylesheet -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    
-    <div class="container-fluid">
-        <!-- Nav Bar -->
-        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="">Star Wars Browser</a>
-           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="#" id="people" >People</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#" id="planets">Planets</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#" id="species">Species</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="vehicles">Vehicles</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="starships">Starships</a>
-              </li>
-          </ul>
-          </div>
-        </div>
-      <div class="row" id="output"></div>
-    </div>
-    <div class="navbar navbar-expand-sm bg-dark navbar-dark ">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#" id="previous" >Previous</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#" id="next">Next</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" id="page_number">page 1</a>
-      </li>
+
+  <div class="container-fluid">
+    <!-- Nav Bar -->
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="">Star Wars Browser</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="people">People</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="planets">Planets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="species">Species</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="vehicles">Vehicles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="starships">Starships</a>
+          </li>
         </ul>
+      </div>
     </div>
 
+    <div class="row" id="output">
+      
+    </div>
+  
+
+  <div class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" id="previous">Previous</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" id="next">Next</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" id="page_number">page 1</a>
+      </li>
+    </ul>
+  </div>
+
+  
+  <div class="modal " id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        
+        <div class="modal-header" >
+          <h1 class="modal-title" id="m-head">Modal Heading</h1>
+          <button type="button" id="closebtn" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        
+        <div class="modal-body" id="m-body">
+          Modal body..
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+  <div id="w3-modal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom w3-card-8">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('w3-modal').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <div id="m-head">Modal Header</div>
+      </header>
+      <div class="w3-container" id="m-body">
+        <p>Some text..</p>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+-->
 
 
 
@@ -66,13 +111,14 @@
 
 
 
-
-
-
-    <!-- <footer>Developed with 💙  , using the <a href="https://swapi.co/">Star Wars open API</a>.</footer> -->
+  <!-- <footer>Developed with 💙  , using the <a href="https://swapi.co/">Star Wars open API</a>.</footer> -->
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="js/custom.js"></script>
+
 </html>
