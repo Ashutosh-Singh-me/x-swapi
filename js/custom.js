@@ -53,7 +53,7 @@ function setData(data, c) {
             <div class="card">
                 <h5 class="card-header">${element.name}${test}</h5>
                     <div class="card-body">
-                        <ul type="none" class="list list list-side">
+                        <ul type="none" class="list list-side">
                             <li>Birth Year : </li>
                             <li>Eye Colour : </li>
                             <li>Skin Colour : </li>
@@ -84,7 +84,7 @@ function setData(data, c) {
             <div class="card">
                 <h5 class="card-header">${element.name}</h5>
                     <div class="card-body">
-                        <ul type="none" class="list list list-side">
+                        <ul type="none" class="list list-side">
                             <li>Climate : </li>
                             <li>Diameter : </li>
                             <li>Gravity : </li>
@@ -119,7 +119,7 @@ function setData(data, c) {
             <div class="card">
                 <h5 class="card-header">${element.name}</h5>
                     <div class="card-body">
-                        <ul type="none" class="list list list-side">
+                        <ul type="none" class="list list-side">
                             <li>Classification : </li>
                             <li>Language : </li>
                             <li>Skin Colour : </li>
@@ -154,7 +154,7 @@ function setData(data, c) {
             <div class="card">
                 <h5 class="card-header">${element.name}</h5>
                     <div class="card-body">
-                        <ul type="none" class="list list list-side">
+                        <ul type="none" class="list list-side">
                             <li>Model : </li>
                             <li>Class : </li>
                             <li>Cost : </li>
@@ -189,7 +189,7 @@ function setData(data, c) {
             <div class="card">
                 <h5 class="card-header">${element.name}</h5>
                     <div class="card-body">
-                        <ul type="none" class="list list list-side">
+                        <ul type="none" class="list list-side">
                             <li>Model : </li>
                             <li>Class : </li>
                             <li>Cost : </li>
@@ -217,18 +217,18 @@ function setData(data, c) {
         });
     }
 
-
     mainElement.innerHTML = output;
+    setEventListener();
 }
 
 function getGender(gender) {
     if (gender === 'male')
-        return '<span> &#x2642</span>';//' &#x2642';
+        return '<span> &#x2642</span>';
     else
     if (gender === 'female')
-        return '<span> &#x2640</span>';//' &#x2640';
+        return '<span> &#x2640</span>';
     else
-    return '<span style="font-weight: 400"> &#x3f</span>'//' &#x3f';
+    return '<span style="font-weight: 400"> &#x3f</span>';
 }
 
 function movement(temp_next, temp_previous) {
@@ -246,3 +246,24 @@ function movement(temp_next, temp_previous) {
     else
         previous_link.classList.remove('disabled');
 }
+
+function setEventListener(){
+    var elements = document.getElementsByClassName('card');
+
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', showCurrentModal, false);
+    }
+}
+
+function showCurrentModal() {
+    // let myModal = document.getElementById('myModal');
+    // let close_btn = document.getElementById('closebtn');
+
+    var card_header = this.getElementsByClassName('card-header');
+    var card_body = this.getElementsByClassName('card-body');
+
+    document.getElementById('m-head').innerHTML =  card_header[0].innerHTML  ;
+    document.getElementById('m-body').innerHTML = card_body[0].innerHTML;
+
+    $('#myModal').modal('toggle');
+}   
