@@ -3,6 +3,7 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
     background-image: url('https://ak6.picdn.net/shutterstock/videos/1022088616/thumb/1.jpg');
     border-image-repeat: stretch;
+    color: whitesmoke;
 }
 
 h5 {
@@ -20,12 +21,28 @@ h5 {
     font-size: large;
 }
 
+/* Title */
+
+.title {
+    line-height: 6;
+    padding-top: 2vw;
+}
+
+.title > em {
+    font-size: medium;
+    margin-top: 6rem;
+}
+
 /* Main Body */
 
 #output {
     margin-bottom: 2em;
-    padding-bottom: 2em;
 }
+
+.text-center {
+    margin: 15vw auto;
+}
+
 .container-fluid {
     padding: 0;
 }
@@ -37,10 +54,12 @@ h5 {
 
 .card {
     cursor: pointer;
+    background-color: transparent;
+    border: 1px solid olivedrab;
 }
 
 .card:hover {
-    border: solid 1px black;
+    border: solid 1px white;
 }
 
 .card-header {
@@ -49,11 +68,13 @@ h5 {
 
 .card-body {
     font-size: large;
+    font-weight: 500;
+    color: whitesmoke;
+    line-height: 2;
 }
 
 .row {
     margin: 0;
-    /* padding-right: 2%; */
 }
 
 .colour {
@@ -67,19 +88,37 @@ h5 {
 }
 
 .list-side {
-    padding-inline-end: 10%; /* 20% or 5%*/
+    padding-inline-end: 10%;
 }
 
 /* Next & Previous bar */
 
-#bottom-bar {
-    font-size: small;
+.disabled {
+    pointer-events: none;
+    cursor: auto;
+}
+
+.page-link {
+    border: 1px solid olivedrab;
+}
+
+.pagination>li>a {
+    background-color: transparent;
+}
+
+.pagination>li>a:active, .pagination>li>a:visited {
+    color: white;
+}
+
+.pagination>li>a:hover {
+    background-color: lightgrey;
+    color: black;
 }
 
 /* Modal */
 
 .modal-open {
-    padding-right:0 ! important;
+    padding-right: 0 ! important;
 }
 
 .modal-header {
@@ -90,4 +129,6 @@ h5 {
 .modal-body {
     font-size: large;
     font-weight: 500;
+    color: black;
+    line-height: 2;
 }

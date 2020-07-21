@@ -4,18 +4,29 @@ document.getElementById('planets').addEventListener('click', getInfo.bind(null,'
 document.getElementById('species').addEventListener('click', getInfo.bind(null,'species'));
 document.getElementById('vehicles').addEventListener('click', getInfo.bind(null,'vehicles'));
 document.getElementById('starships').addEventListener('click', getInfo.bind(null, 'starships'));
+document.getElementById('pages').style.display = 'none';
 
 var previous_link =  document.getElementById('previous');
 var next_link = document.getElementById('next');
 var next = '', prev = '', target_global = '';
+var loader = `<div class="text-center">
+    <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+    </div>
+    </div>`;
 
 previous_link.addEventListener('click', getInfoLink.bind(null, 'previous'));
 next_link.addEventListener('click', getInfoLink.bind(null, 'next'));
 
+
 function getInfo(target) {
     target_global = target;
-    let API = "http://swapi.dev/api/"+target+"/";
-    
+    let API = "https://swapi.dev/api/"+target+"/";
+
+    document.getElementById('start-text').style.display = 'none';
+    document.getElementById('pages').style.display = 'none';
+    mainElement.innerHTML = loader;
+
     fetch(API)
     .then( function(rsp) { 
         console.log(rsp);
@@ -33,8 +44,11 @@ function getInfoLink(link_name) {
         API = prev;
     if (link_name === 'next')
         API = next;
+        
+    document.getElementById('pages').style.display = 'none';
+    mainElement.innerHTML = loader;
 
-    fetch(API)
+    fetch('https' + API.slice(4))
     .then( function(rsp) { 
         return rsp.json()
     })
@@ -52,7 +66,7 @@ function setData(data, c) {
             test = getGender(element.gender);
             let temp = `<div class="col-lg-6 colour">
             <div class="card">
-                <h5 class="card-header">${element.name}${test}</h5>
+                <h3 class="card-header">${element.name}${test}</h3>
                     <div class="card-body">
                         <ul type="none" class="list list-side">
                             <li>Birth Year : </li>
@@ -83,7 +97,7 @@ function setData(data, c) {
         data.results.forEach(element => {
             let temp = `<div class="col-lg-6 colour">
             <div class="card">
-                <h5 class="card-header">${element.name}</h5>
+                <h3 class="card-header">${element.name}</h3>
                     <div class="card-body">
                         <ul type="none" class="list list-side">
                             <li>Climate : </li>
@@ -118,7 +132,7 @@ function setData(data, c) {
         data.results.forEach(element => {
             let temp = `<div class="col-lg-6 colour">
             <div class="card">
-                <h5 class="card-header">${element.name}</h5>
+                <h3 class="card-header">${element.name}</h3>
                     <div class="card-body">
                         <ul type="none" class="list list-side">
                             <li>Classification : </li>
@@ -153,7 +167,7 @@ function setData(data, c) {
         data.results.forEach(element => {
             let temp = `<div class="col-lg-6 colour">
             <div class="card">
-                <h5 class="card-header">${element.name}</h5>
+                <h3 class="card-header">${element.name}</h3>
                     <div class="card-body">
                         <ul type="none" class="list list-side">
                             <li>Model : </li>
@@ -188,7 +202,7 @@ function setData(data, c) {
         data.results.forEach(element => {
             let temp = `<div class="col-lg-6 colour">
             <div class="card">
-                <h5 class="card-header">${element.name}</h5>
+                <h3 class="card-header">${element.name}</h3>
                     <div class="card-body">
                         <ul type="none" class="list list-side">
                             <li>Model : </li>
@@ -217,7 +231,8 @@ function setData(data, c) {
 
         });
     }
-    document.getElementById('start-text').style.display = 'none';
+    
+    document.getElementById('pages').style.display = 'flex';
     mainElement.innerHTML = output;
     setEventListener();
 }
@@ -257,9 +272,6 @@ function setEventListener(){
 }
 
 function showCurrentModal() {
-    // let myModal = document.getElementById('myModal');
-    // let close_btn = document.getElementById('closebtn');
-
     var card_header = this.getElementsByClassName('card-header');
     var card_body = this.getElementsByClassName('card-body');
 
