@@ -1,23 +1,63 @@
 body {
-    background-color: lightgray;
+    background-color: #010101;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-image: url('https://ak6.picdn.net/shutterstock/videos/1022088616/thumb/1.jpg');
+    border-image-repeat: stretch;
 }
 
 h5 {
     font-weight: bold;
 }
 
+/* Navigation Bar */
+
+.custom-brand {
+    font-size: xx-large;
+    font-family: fantasy, sans-serif;
+}
+
+.nav-link {
+    font-size: large;
+}
+
+/* Main Body */
+
+#output {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+}
 .container-fluid {
     padding: 0;
 }
+
+.welcome {
+    text-align: center;
+    color: white;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    border: solid 1px black;
+}
+
+.card-header {
+    background-color: olivedrab;
+}
+
+.card-body {
+    font-size: large;
+}
+
 .row {
     margin: 0;
-    padding-right: 2%;
+    /* padding-right: 2%; */
 }
+
 .colour {
-    /* background-color: chartreuse; */
-    /* border: 1px solid black; */
-    /* height:200px; */
-    padding: 2% 0 0 2%;
+    margin-top: 2%;
 }
 
 .list {
@@ -30,3 +70,24 @@ h5 {
     padding-inline-end: 10%; /* 20% or 5%*/
 }
 
+/* Next & Previous bar */
+
+#bottom-bar {
+    font-size: small;
+}
+
+/* Modal */
+
+.modal-open {
+    padding-right:0 ! important;
+}
+
+.modal-header {
+    background-color: olivedrab;
+    font-weight: 800;
+}
+
+.modal-body {
+    font-size: large;
+    font-weight: 500;
+}

@@ -216,7 +216,7 @@ function setData(data, c) {
 
         });
     }
-
+    document.getElementById('start-text').style.display = 'none';
     mainElement.innerHTML = output;
     setEventListener();
 }
