@@ -14,7 +14,7 @@ next_link.addEventListener('click', getInfoLink.bind(null, 'next'));
 
 function getInfo(target) {
     target_global = target;
-    let API = "http://swapi.dev/api/"+target+"/";
+    let API = "https://swapi.dev/api/"+target+"/";
     
     fetch(API)
     .then( function(rsp) { 
