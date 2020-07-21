@@ -44,7 +44,7 @@ function getInfoLink(link_name) {
         API = prev;
     if (link_name === 'next')
         API = next;
-        
+
     document.getElementById('pages').style.display = 'none';
     mainElement.innerHTML = loader;
 
