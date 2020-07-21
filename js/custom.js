@@ -18,6 +18,7 @@ function getInfo(target) {
     
     fetch(API)
     .then( function(rsp) { 
+        console.log(rsp);
         return rsp.json()
     })
     .then( function(data) {
