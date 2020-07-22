@@ -10,6 +10,15 @@ h5 {
     font-weight: bold;
 }
 
+.center {
+    text-align: center;
+}
+
+.image {
+    width: 40vw;
+    height: 38vw;
+}
+
 /* Navigation Bar */
 
 .custom-brand {
@@ -24,8 +33,9 @@ h5 {
 /* Title */
 
 .title {
-    line-height: 6;
+    line-height: 2;
     padding-top: 2vw;
+    text-align: center;
 }
 
 .title > em {
